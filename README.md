@@ -23,3 +23,6 @@ This update adds a preferences popup to capture user cookie preferences, a means
 ### User reset cookie preference
 You can add: `<a href="javascript:$.gdprcookie.wipe();">Reset GDPR preferences</a>`
 to a theme page, to allow the user to delete their saved cookie preference, in order to recreate it on their next visit to the site
+
+![Osclass GDPR](https://i.imgur.com/oIKQB1R.png)
+![Osclass GDPR Email](https://i.imgur.com/pGLmGaF.png)
