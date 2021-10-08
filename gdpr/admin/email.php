@@ -12,7 +12,7 @@ $locale = osc_locale_code();
                             <?php _e('User id or email', 'gdpr'); ?>
                         </div>
                         <div class="form-controls">
-                            <input id="userid" name="userid" type="text" style="width:50%;" value=""></input>
+                            <input id="userid" name="userid" type="text" value=""></input>
                         </div>
                     </div>
                     <div class="form-row">
@@ -20,7 +20,7 @@ $locale = osc_locale_code();
                             <?php _e("Email subject", 'gdpr'); ?>
                         </div>
                         <div class="form-controls">
-                            <input id="emailSubject" name="emailSubject" type="text" style="width:50%;" value="<?php echo osc_get_preference('email_subject_' . $locale, 'gdpr'); ?>"></input>
+                            <input id="emailSubject" name="emailSubject" type="text" value="<?php echo osc_get_preference('email_subject_' . $locale, 'gdpr'); ?>"></input>
                         </div>
                     </div>
                     <div class="form-row">
@@ -28,7 +28,7 @@ $locale = osc_locale_code();
                             <?php _e("Email text", 'gdpr'); ?>
                         </div>
                         <div class="form-controls">
-                            <textarea id="emailText" name="emailText" rows=10 style="width:50%;"><?php echo osc_get_preference('email_text_' . $locale, 'gdpr'); ?></textarea>
+                            <textarea id="emailText" name="emailText" rows=10 ><?php echo osc_get_preference('email_text_' . $locale, 'gdpr'); ?></textarea>
                         </div>
                     </div>
                     <div class="form-row">

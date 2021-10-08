@@ -1,3 +1,6 @@
+v2.0.2
+- add user cookie expiry days preference
+
 v2.0.1
 - add popup to capture user cookie preferences
 - add ability to hide/disable elements according to user preferences

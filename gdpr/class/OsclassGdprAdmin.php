@@ -167,6 +167,7 @@ class OsclassGdprAdmin {
                     osc_set_preference('gdpr_marketing_js',     Params::getParam('gdpr_marketing_js'),      'gdpr');
                     osc_set_preference('gdpr_analytics_js',   Params::getParam('gdpr_analytics_js'),    'gdpr');
                     osc_set_preference('gdpr_preferences_js',   Params::getParam('gdpr_preferences_js'),    'gdpr');
+                    osc_set_preference('gdpr_cookie_days',   Params::getParam('gdpr_cookie_days'),    'gdpr');
 
                     osc_add_flash_ok_message(__('Successfully saved', 'gdpr'), 'admin');
                     osc_redirect_to(osc_route_admin_url('gdpr-admin-settings'));

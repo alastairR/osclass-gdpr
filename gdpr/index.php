@@ -3,7 +3,7 @@
 Plugin Name: GDPR Osclass plugin
 Plugin URI: http://www.osclass.org/
 Description: GDPR compliance, add agree box to forms, remove account and download user information
-Version: 2.0.1
+Version: 2.0.2
 Author: Osclass
 Author URI: http://www.osclass.org/
 Short Name: gdpr
@@ -26,6 +26,7 @@ require_once OSCLASS_GDPR_PATH . 'class/OsclassGdprAdmin.php';
 
 function gdpr_call_after_install() {
     osc_set_preference('gdpr_enabled', '0', 'gdpr');
+    osc_set_preference('gdpr_cookie_days', '365', 'gdpr');
     osc_set_preference('remove_account_enabled', "0", 'gdpr');
     osc_set_preference('portability_enabled', "0", 'gdpr');
 

@@ -225,6 +225,15 @@ osc_add_hook('admin_footer', function(){ ?>
                         </div> 
                     </div> 
                 </div>
+                <div class="col-md-12"> 
+                    <h3 class="font-weight-bold mr-3"><?php _e('User cookie expiry (days)', 'gdpr'); ?></h3>
+                    
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="gdpr_cookie_days"><?php echo osc_get_preference('gdpr_cookie_days', 'gdpr'); ?></textarea>
+                        </div> 
+                    </div> 
+                </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary"><?php _e('Save', 'gdpr'); ?></button>
                 </div>

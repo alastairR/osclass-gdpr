@@ -145,6 +145,7 @@ class OsclassGdpr {
         $marketing_js = osc_get_preference('gdpr_marketing_js', 'gdpr');
         $analytics_js = osc_get_preference('gdpr_analytics_js', 'gdpr');
         $preferences_js = osc_get_preference('gdpr_preferences_js', 'gdpr');
+        $cookie_days = osc_get_preference('gdpr_cookie_days', 'gdpr');
 ?>
 <style>
 /* GDPR Cookie dialog */
@@ -237,7 +238,7 @@ jQuery(document).ready(function ($) {
         title: "<?php _e('Accept cookies & privacy policy?','gdpr'); ?>",
         message: '<?php echo $popup; ?>',
         delay: 600,
-        expires: 1,
+        expires: <?php echo $cookie_days; ?>,
         acceptBtnLabel: "<?php _e('Accept cookies','gdpr'); ?>",
     });
     
