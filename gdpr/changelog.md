@@ -1,3 +1,6 @@
+v2.0.3
+- agree check box error
+
 v2.0.2
 - add user cookie expiry days preference
 
