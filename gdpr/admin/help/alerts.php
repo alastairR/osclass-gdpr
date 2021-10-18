@@ -69,12 +69,12 @@ pre code {
 </code></pre>
 <p>Alerts are created via ajax request, so we will need to pass the new input checkbox. (In this case we are using jquery)</p>
 <pre><code class="language-js">...
-gpdr_osclass: $(<span class="hljs-string">'.alert_form input[name="gpdr_osclass"]:checked'</span>).val()
+gdpr_osclass: $(<span class="hljs-string">'.alert_form input[name="gdpr_osclass"]:checked'</span>).val()
 ...
 </code></pre>
 <p>Add the previous line to the <code>$.post</code> call.</p>
 <pre><code class="language-js">...
-$.post(<span class="hljs-string">'&lt;?php echo osc_base_url(true); ?&gt;'</span>, {email:$(<span class="hljs-string">"#alert_email"</span>).val(), userid:$(<span class="hljs-string">"#alert_userId"</span>).val(), alert:$(<span class="hljs-string">"#alert"</span>).val(), page:<span class="hljs-string">"ajax"</span>, action:<span class="hljs-string">"alerts"</span>, gpdr_osclass: $(<span class="hljs-string">'.alert_form input[name="gpdr_osclass"]:checked'</span>).val()},
+$.post(<span class="hljs-string">'&lt;?php echo osc_base_url(true); ?&gt;'</span>, {email:$(<span class="hljs-string">"#alert_email"</span>).val(), userid:$(<span class="hljs-string">"#alert_userId"</span>).val(), alert:$(<span class="hljs-string">"#alert"</span>).val(), page:<span class="hljs-string">"ajax"</span>, action:<span class="hljs-string">"alerts"</span>, gdpr_osclass: $(<span class="hljs-string">'.alert_form input[name="gdpr_osclass"]:checked'</span>).val()},
 ...
 </code></pre>
 <h3><a id="3_Handle_error_message_69"></a>3) Handle error message</h3>
@@ -99,7 +99,7 @@ $.post(<span class="hljs-string">'&lt;?php echo osc_base_url(true); ?&gt;'</span
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
 $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
     $(<span class="hljs-string">".sub_button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    $.post(<span class="hljs-string">'&lt;?php echo osc_base_url(true); ?&gt;'</span>, {email:$(<span class="hljs-string">"#alert_email"</span>).val(), userid:$(<span class="hljs-string">"#alert_userId"</span>).val(), alert:$(<span class="hljs-string">"#alert"</span>).val(), page:<span class="hljs-string">"ajax"</span>, action:<span class="hljs-string">"alerts"</span>, gpdr_osclass: $(<span class="hljs-string">'.alert_form input[name="gpdr_osclass"]:checked'</span>).val()},
+    $.post(<span class="hljs-string">'&lt;?php echo osc_base_url(true); ?&gt;'</span>, {email:$(<span class="hljs-string">"#alert_email"</span>).val(), userid:$(<span class="hljs-string">"#alert_userId"</span>).val(), alert:$(<span class="hljs-string">"#alert"</span>).val(), page:<span class="hljs-string">"ajax"</span>, action:<span class="hljs-string">"alerts"</span>, gdpr_osclass: $(<span class="hljs-string">'.alert_form input[name="gdpr_osclass"]:checked'</span>).val()},
             <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
                 <span class="hljs-keyword">if</span>(data==<span class="hljs-number">1</span>) { alert(<span class="hljs-string">'&lt;?php echo osc_esc_js(__('</span>You have sucessfully subscribed to the alert<span class="hljs-string">', '</span>bender<span class="hljs-string">')); ?&gt;'</span>); }
                 <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(data==-<span class="hljs-number">1</span>) { alert(<span class="hljs-string">'&lt;?php echo osc_esc_js(__('</span>Invalid email address<span class="hljs-string">', '</span>bender<span class="hljs-string">')); ?&gt;'</span>); }

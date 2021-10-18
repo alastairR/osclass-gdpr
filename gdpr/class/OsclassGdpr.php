@@ -297,7 +297,7 @@ jQuery(document).ready(function ($) {
         if($text=="") {
             return false;
         }
-        echo '<label class="gdpr-agree" style="float: none;width: inherit;"><input type="checkbox" name="gpdr_osclass" value="1"/>&nbsp;'.$this->merge_link($text).'</label>';
+        echo '<label class="gdpr-agree" style="float: none;width: inherit;"><input type="checkbox" name="gdpr_osclass" value="1"/>&nbsp;'.$this->merge_link($text).'</label>';
         
     }
     
@@ -393,7 +393,7 @@ jQuery(document).ready(function ($) {
                 return false;
             }
 
-            if(Params::getParam('gpdr_osclass')!="1") {
+            if(Params::getParam('gdpr_osclass')!="1") {
 
                 if(osc_is_current_page('ajax', 'alerts')) {
                     echo "99";
