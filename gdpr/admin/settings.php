@@ -18,6 +18,13 @@ osc_add_hook('admin_footer', function(){ ?>
 
     });
     </script>
+    <style>
+        .alert-success,
+        .alert-danger {
+            padding: 0 .5rem;
+            margin-left: 1rem !important;
+        }
+    </style>
 <?php }); ?>
 
 <div class="row">
@@ -191,7 +198,7 @@ osc_add_hook('admin_footer', function(){ ?>
                             <div class="pt-3 tab-pane <?php echo $active; ?>" id="tab-flash-<?php echo $locale['pk_c_code']; ?>">
                                 <div class="form-group">
                                     <textarea class="form-control" name="gdpr_popup[<?php echo $locale['pk_c_code']; ?>]"><?php echo osc_get_preference('gdpr_popup_' . $locale['pk_c_code'], 'gdpr'); ?></textarea>
-                                    <p class="text-muted mb-0 p-2"><small><b><?php _e('Example text:', 'gdpr'); ?></b>&nbsp;<?php echo osc_get_preference('gdpr_popup_', 'gdpr'); ?></small></p>
+                                    <p class="text-muted mb-0 p-2"><small><b><?php _e('Example text:', 'gdpr'); ?></b>&nbsp;<?php echo osc_get_preference('gdpr_popup_default', 'gdpr'); ?></small></p>
                                 </div> 
                             </div><!-- /.tab-pane -->
                         <?php } ?>

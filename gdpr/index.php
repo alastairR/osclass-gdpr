@@ -42,7 +42,7 @@ function gdpr_call_after_install() {
     osc_set_preference('error_agree_text', 'You must accept our "Terms and Conditions" and "Privacy Policy"', 'gdpr');
     osc_set_preference('error_agree_text_default', 'You must accept our "Terms and Conditions" and "Privacy Policy"', 'gdpr');
 
-    osc_set_preference('gdpr_popup', 'By accepting our cookies you grant us permission to store cookies in your browser. You can find more information about what we do with your data: {TERMS}, {PRIVACY}', 'gdpr', 'STRING');
+    osc_set_preference('gdpr_popup_default', 'By accepting our cookies you grant us permission to store cookies in your browser. You can find more information about what we do with your data: {TERMS}, {PRIVACY}', 'gdpr', 'STRING');
 
     osc_set_preference('gdpr_marketing_js', '$(\'div[class*="ads_"\').hide();', 'gdpr');
     osc_set_preference('gdpr_analytics_js', '$(\'div[class*="anl_"\').hide();', 'gdpr');

@@ -1,5 +1,6 @@
 v2.0.4
 - FIx gpdr typo
+- improve admin settings page and examples
 
 v2.0.3
 - agree check box error
