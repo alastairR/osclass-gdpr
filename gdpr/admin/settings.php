@@ -237,7 +237,7 @@ osc_add_hook('admin_footer', function(){ ?>
                     
                     <div class="mb-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="gdpr_cookie_days"><?php echo osc_get_preference('gdpr_cookie_days', 'gdpr'); ?></textarea>
+                            <input type="text" class="form-control" name="gdpr_cookie_days" value="<?php echo osc_get_preference('gdpr_cookie_days', 'gdpr'); ?>"></input>
                         </div> 
                     </div> 
                 </div>
