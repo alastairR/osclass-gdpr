@@ -35,7 +35,6 @@ class OsclassGdpr {
                 return $options;
             });
 
-            
             osc_add_hook('footer', function() {
                 $location = Rewrite::newInstance()->get_location();
                 $section  = Rewrite::newInstance()->get_section();
@@ -136,7 +135,13 @@ class OsclassGdpr {
 
 });
 </script>
-<?php } else {
+<?php 
+        }
+            }, 10);
+    }
+            
+    if(osc_get_preference('gdpr_enabled', 'gdpr')=="1") {
+        osc_add_hook('footer', function() {
         $current_locale = osc_current_user_locale();
 
         $text = osc_get_preference('gdpr_popup_' . $current_locale, 'gdpr');
@@ -146,6 +151,7 @@ class OsclassGdpr {
         $analytics_js = osc_get_preference('gdpr_analytics_js', 'gdpr');
         $preferences_js = osc_get_preference('gdpr_preferences_js', 'gdpr');
         $cookie_days = osc_get_preference('gdpr_cookie_days', 'gdpr');
+
 ?>
 <style>
 /* GDPR Cookie dialog */
@@ -244,24 +250,17 @@ jQuery(document).ready(function ($) {
     
 
     $(document.body)
-        .on("gdpr:show", function() {
-            console.log("Cookie dialog is shown");
-        })
         .on("gdpr:accept", function() {
             var preferences = $.gdprcookie.preference();
             console.log("Preferences saved:", preferences);
         })
-        .on("gdpr:advanced", function() {
-            console.log("Advanced button was pressed");
-        });
         processGDPR();
 });
 </script>
-<?php             }
+<?php
             }, 10);
-             
         }
-
+             
         osc_add_hook('init', array(&$this,'handle_post'));
 
         if(osc_get_preference('gdpr_enabled', 'gdpr')=="1") {

@@ -47,6 +47,7 @@ function gdpr_call_after_install() {
     osc_set_preference('gdpr_marketing_js', '$(\'div[class*="ads_"\').hide();', 'gdpr');
     osc_set_preference('gdpr_analytics_js', '$(\'div[class*="anl_"\').hide();', 'gdpr');
     osc_set_preference('gdpr_preferences_js', '$(\'div[class*="prf_"\').hide();', 'gdpr');
+    osc_set_preference('gdpr_cookie_days', '365', 'gdpr');
 
     osc_set_preference('email_subject_default', 'GDPR Data Request', 'gdpr');
     osc_set_preference('email_text_default', 'Your data is contained in the attached .zip file.', 'gdpr');
