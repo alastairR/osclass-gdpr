@@ -1,3 +1,7 @@
+v2.0.5
+- Override system hook for Google analytics to allow GDPR popup to remove it
+- Change Javascript to remove instead of hide elements user has refused
+
 v2.0.4
 - FIx gpdr typo
 - improve admin settings page and examples

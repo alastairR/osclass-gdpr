@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: GDPR Osclass plugin
-Plugin URI: http://www.osclass.org/
+Plugin URI: https://github.com/alastairR/osclass-gdpr
 Description: GDPR compliance, add agree box to forms, remove account and download user information
-Version: 2.0.4
+Version: 2.0.5
 Author: Osclass
-Author URI: http://www.osclass.org/
+Author URI: https://github.com/alastairR/osclass-gdpr
 Short Name: gdpr
 Plugin update URI: gdpr
 */
@@ -44,9 +44,9 @@ function gdpr_call_after_install() {
 
     osc_set_preference('gdpr_popup_default', 'By accepting our cookies you grant us permission to store cookies in your browser. You can find more information about what we do with your data: {TERMS}, {PRIVACY}', 'gdpr', 'STRING');
 
-    osc_set_preference('gdpr_marketing_js', '$(\'div[class*="ads_"\').hide();', 'gdpr');
-    osc_set_preference('gdpr_analytics_js', '$(\'div[class*="anl_"\').hide();', 'gdpr');
-    osc_set_preference('gdpr_preferences_js', '$(\'div[class*="prf_"\').hide();', 'gdpr');
+    osc_set_preference('gdpr_marketing_js', '$(\'div[class*="ads_"\').remove();', 'gdpr');
+    osc_set_preference('gdpr_analytics_js', '$(\'div[class*="anl_"\').remove();', 'gdpr');
+    osc_set_preference('gdpr_preferences_js', '$(\'div[class*="prf_"\').remove();', 'gdpr');
     osc_set_preference('gdpr_cookie_days', '365', 'gdpr');
 
     osc_set_preference('email_subject_default', 'GDPR Data Request', 'gdpr');

@@ -263,6 +263,9 @@ jQuery(document).ready(function ($) {
              
         osc_add_hook('init', array(&$this,'handle_post'));
 
+        osc_remove_hook('footer', 'osc_ga_analytics_footer');
+        osc_add_hook('footer', array(&$this,'ga_analytics_footer'));
+
         if(osc_get_preference('gdpr_enabled', 'gdpr')=="1") {
             // handle post 
 
@@ -288,6 +291,15 @@ jQuery(document).ready(function ($) {
             }
         }
     } 
+    
+    function ga_analytics_footer() {
+        $id = osc_google_analytics_id();
+        if ($id) {
+            echo '<div class="anl_google">';
+            osc_ga_analytics_footer();
+            echo '</div>';
+        }        
+    }
 
     function agree_checkbox() { 
         $current_locale = osc_current_user_locale();
