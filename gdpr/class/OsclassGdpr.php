@@ -434,7 +434,6 @@ jQuery(document).ready(function ($) {
         if(osc_is_current_page('item', 'contact_post')) { return true; }
         if(osc_is_current_page('item', 'add_comment') && !osc_is_web_user_logged_in() && osc_comments_enabled()) { return true; }
         if(osc_is_current_page('register', 'register_post')) { return true; }
-        if(osc_is_current_page('login', 'recover_post')) { return true; }
         if(osc_is_current_page('contact', 'contact_post')) { return true; }
         if(osc_is_current_page('user', 'contact_post')) { return true; }
         return false; 
