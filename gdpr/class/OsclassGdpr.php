@@ -302,6 +302,7 @@ jQuery(document).ready(function ($) {
     }
 
     function agree_checkbox() { 
+        if(osc_is_web_user_logged_in()) { return false; }
         $current_locale = osc_current_user_locale();
 
         $text = osc_get_preference('agree_text_' . $current_locale, 'gdpr');
@@ -427,12 +428,13 @@ jQuery(document).ready(function ($) {
     }
     
     function _validate_needed() { 
-        if(osc_is_current_page('item', 'item_add_post') && !osc_is_web_user_logged_in()) { return true; }
-        if(osc_is_current_page('item', 'item_edit_post') && !osc_is_web_user_logged_in()) { return true; }
-        if(osc_is_current_page('ajax', 'alerts') && !osc_is_web_user_logged_in() ) { return true; }
+        if (osc_is_web_user_logged_in()) { return false;}
+        if(osc_is_current_page('item', 'item_add_post')) { return true; }
+        if(osc_is_current_page('item', 'item_edit_post')) { return true; }
+        if(osc_is_current_page('ajax', 'alerts')) { return true; }
         if(osc_is_current_page('item', 'send_friend_post')) { return true; }
         if(osc_is_current_page('item', 'contact_post')) { return true; }
-        if(osc_is_current_page('item', 'add_comment') && !osc_is_web_user_logged_in() && osc_comments_enabled()) { return true; }
+        if(osc_is_current_page('item', 'add_comment') && osc_comments_enabled()) { return true; }
         if(osc_is_current_page('register', 'register_post')) { return true; }
         if(osc_is_current_page('contact', 'contact_post')) { return true; }
         if(osc_is_current_page('user', 'contact_post')) { return true; }
